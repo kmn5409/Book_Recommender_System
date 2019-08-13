@@ -5,8 +5,8 @@ def count_books_and_ratings(books, ratings):
     i = 0
     print('Prints the books and the frequency and the used prices of the books: \n')
     print('ISBN\t\t Count\t Price')
+    counts = ratings['ISBN'].value_counts().to_dict()
     for isbn in ISBN_s:
-        counts = ratings['ISBN'].value_counts().to_dict()
         print(isbn, '\t' , counts[isbn], '\t', books['prices'][i])
         i+=1
     #counts = [isbn,count for isbn,count in ISBN_s,ratings.groupby(isbn).count()] 
